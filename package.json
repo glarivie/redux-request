@@ -1,10 +1,10 @@
 {
-  "name": "@hqro/redux-fetch",
-  "version": "1.0.0",
-  "description": "Simple Redux API fetch middleware",
+  "name": "@hqro/redux-request",
+  "version": "1.0.1",
+  "description": "Simple Redux API request middleware",
   "main": "src/index.js",
-  "repository": "git@github.com:hqro/redux-fetch.git",
-  "author": "g.lariviere <g.lariviere@qwant.com>",
+  "repository": "git@github.com:hqro/redux-request.git",
+  "author": "g.lariviere <glarivie@student.42.fr",
   "license": "MIT",
   "private": false,
   "scripts": {
