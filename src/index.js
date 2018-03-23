@@ -25,7 +25,7 @@ const fetchMiddleware = ({ getState }) => dispatch =>
       const data = await extractBody(response)
 
       if (response.status !== 200)
-        throw new Error(JSON.stringify(body))
+        throw new Error(JSON.stringify(data))
 
       dispatch({
         type: `${type}_SUCCESS`,
