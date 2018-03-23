@@ -56,11 +56,11 @@ const createUser = data => ({
 const { API_URL } = process.env
 
 const fetchAllUsers = (token, retries = 2) =>
-	async dispatch => dispatch({
-		type: '@@REQUEST/FETCH_ALL_USERS',
-		url: `${API_URL}/users`,
-		headers: { Authorization: token },
-		onError: () =>
-			retries && dispatch(fetchAllUsers(token, retries - 1)),
-	})
+  async dispatch => dispatch({
+    type: '@@REQUEST/FETCH_ALL_USERS',
+    url: `${API_URL}/users`,
+    headers: { Authorization: token },
+    onError: () =>
+    retries && dispatch(fetchAllUsers(token, retries - 1)),
+  })
 ```
