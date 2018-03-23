@@ -7,6 +7,9 @@
   "author": "g.lariviere <glarivie@student.42.fr",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest --verbose --forceExit",
     "lint": "eslint src/**; exit 0"
