@@ -48,3 +48,19 @@ const createUser = data => ({
   onError: e => console.error(e),
 })
 ```
+
+### Using Redux-Thunk
+
+```js
+// actions/users.js
+const { API_URL } = process.env
+
+const fetchAllUsers = (token, retries = 2) =>
+	async dispatch => dispatch({
+		type: '@@REQUEST/FETCH_ALL_USERS',
+		url: `${API_URL}/users`,
+		headers: { Authorization: token },
+		onError: () =>
+			retries && dispatch(fetchAllUsers(token, retries - 1)),
+	})
+```
