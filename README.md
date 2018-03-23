@@ -1,16 +1,16 @@
-## Redux Fetch Middleware
+## Redux Request Middleware
 
-Simple Redux API fetch middleware
+Simple Redux API request middleware
 
 ### Installation
 
 ```bash
-yarn add @hqro/redux-fetch
+yarn add @hqro/redux-request
 ```
 
 ```js
 import { createStore, applyMiddleware, compose } from 'redux'
-import fetchMiddleware from '@hqro/redux-fetch'
+import requestMiddleware from '@hqro/redux-request'
 
 import reducers from './reducers'
 
@@ -19,7 +19,7 @@ const store = createStore(
   undefined, // Initial state
   compose(
     applyMiddleware(
-      fetchMiddleware,
+      requestMiddleware,
     ),
   ),
 )
@@ -31,10 +31,20 @@ export default store
 
 ```js
 // actions/users.js
-
 const { API_URL } = process.env
 
-const createNewUser = data => ({
-  type: '@@FETCH'
+const fetchAllUsers = token => ({
+  type: '@@REQUEST/FETCH_ALL_USERS',
+  url: `${API_URL}/users`,
+  headers: { Authorization: token },
+})
+
+const createUser = data => ({
+  type: '@@REQUEST/CREATE_USER',
+  method: 'POST',
+  url: `${API_URL}/user`,
+  body: JSON.stringify(data),
+  onSuccess: () => console.log('User created !'),
+  onError: e => console.error(e),
 })
 ```
