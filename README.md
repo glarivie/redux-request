@@ -61,6 +61,6 @@ const fetchAllUsers = (token, retries = 2) =>
     url: `${API_URL}/users`,
     headers: { Authorization: token },
     onError: () =>
-    retries && dispatch(fetchAllUsers(token, retries - 1)),
+      retries && dispatch(fetchAllUsers(token, retries - 1)),
   })
 ```
