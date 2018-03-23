@@ -49,6 +49,28 @@ const createUser = data => ({
 })
 ```
 
+```js
+// reducers/users.js
+const initialState = {
+  users: [],
+}
+
+const userReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case '@@REQUEST/FETCH_ALL_USERS_PENDING':
+    case '@@REQUEST/FETCH_ALL_USERS_ERROR':
+      return initialState
+    case '@@REQUEST/FETCH_ALL_USERS_SUCCESS':
+      return ({
+        ...state,
+        users: payload.data,
+      })
+    default:
+      return state
+  }
+}
+```
+
 ### Using Redux-Thunk
 
 ```js
