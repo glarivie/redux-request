@@ -15,7 +15,7 @@ const fetchMiddleware = ({ getState }) => dispatch =>
       ...action.headers || {},
     }
 
-    if (!type || !url || !type.includes('@@FETCH/'))
+    if (!type || !url || !type.includes('@@REQUEST/'))
       return dispatch(action)
 
     dispatch({ type: `${type}_PENDING` })
