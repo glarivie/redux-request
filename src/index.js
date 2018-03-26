@@ -7,7 +7,7 @@ const extractBody = async response => {
   return response.text()
 }
 
-const fetchMiddleware = ({ getState }) => dispatch =>
+const requestMiddleware = ({ getState }) => dispatch =>
   async ({ type, url, method = 'GET', body, onSuccess, onError, ...action }) => {
     const state = getState()
     const headers = {
@@ -48,4 +48,4 @@ const fetchMiddleware = ({ getState }) => dispatch =>
     }
   }
 
-export default fetchMiddleware
+export default requestMiddleware

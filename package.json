@@ -1,8 +1,8 @@
 {
   "name": "@hqro/redux-request",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple Redux API request middleware",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:hqro/redux-request.git",
   "author": "g.lariviere <glarivie@student.42.fr",
   "license": "MIT",
@@ -12,9 +12,15 @@
   },
   "scripts": {
     "test": "jest --verbose --forceExit",
-    "lint": "eslint src/**; exit 0"
+    "lint": "eslint src/**; exit 0",
+    "build": "babel src -d dist",
+    "prepare": "npm run build"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-stage-3": "^7.0.0-beta.42",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.7.0",
