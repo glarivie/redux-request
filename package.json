@@ -1,6 +1,6 @@
 {
   "name": "@hqro/redux-request",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple Redux API request middleware",
   "main": "dist/index.js",
   "repository": "git@github.com:hqro/redux-request.git",
